@@ -1,0 +1,43 @@
+.recentAccountsWrapper{
+    ul {        
+        li{
+            display:flex;
+            align-items: center;
+            border-bottom:1px solid rgba(0,0,0,0.1);
+            padding:10px 0 10px 0;
+            &:last-child{
+                border-bottom:0;
+            }
+            .accountAvatar i{
+                font-size: 47px;
+                color: #ddd;
+                padding:0 10px 0 10px;
+            }
+        }
+    }
+    
+    .accountSearch{
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 90%;
+        border-radius: 25px;
+        height: 7px;
+        font-size: 15px;        
+        &:focus{
+            outline:none;
+        }
+        &::placeholder{
+            color:#ddd;
+        }       
+    }
+
+    .accountSeachWrapper{
+        padding:5px 15px 5px 15px;
+        width:100%;
+    }
+
+    .buttonWrapper{
+        padding:15px 20px 15px 20px;
+        display:block;
+    }
+}

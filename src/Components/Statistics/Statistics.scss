@@ -1,0 +1,19 @@
+.statTitle{
+    font-size:16px;   
+	i{
+		position: relative;
+		top: -2px;
+	}
+}
+.statSubTitle{
+    font-size:18px;
+    font-weight:bold;
+    padding-top:10px;
+}
+.statisticsWrapper .card{
+    flex-grow:1;
+    margin-right:50px;
+    &:last-child{
+        margin-right:0;
+    }
+}
