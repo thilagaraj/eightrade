@@ -1,4 +1,4 @@
-const FormatNumber=(number)=>{ console.log(number);
+const FormatNumber=(number)=>{
 	 return Math.floor(number)
 			.toString()
 			.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");

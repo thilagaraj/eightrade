@@ -38,10 +38,10 @@ export default {
 		return {type:'ON_TRADE_LOADING',payload:loading}
 	},
 	
-	getTradesData(){
+	getTradesData(filters){
 		return (dispatch)=>{
 			dispatch(this.onTradeLoading(true));		
-			TradeService.getAllTrades().then((response)=>{			
+			TradeService.getAllTrades(filters).then((response)=>{			
 				dispatch(this.onTradeData(response));					
 			}).catch((errorResponse)=>{
 				dispatch(this.onTradeError(errorResponse));				

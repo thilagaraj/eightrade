@@ -8,6 +8,12 @@ import PropTypes from 'prop-types';
 import Actions from '../../Store/Actions';
 import './TradeChart.scss';
 
+/*
+Component Name : RecentTrades
+Description : List out recent trades with different columns. By default all data will be shown. Fiters are added for aggregate results.
+Filters : Trade Date, Asset Class, Instrument Type and Account Number
+*/
+
 class TradeChart extends PureComponent{	
 	
 	constructor(props){
@@ -42,13 +48,14 @@ class TradeChart extends PureComponent{
 				y:o.quantity,
 				ticker:o.ticker,
 				assetClass:o.assetClass,
-				tradeDate:o.tradeDate
+				tradeDate:o.tradeDate,
+				account:o.accountId
 			});
 		});
 		return expected;
 	}
 	
-	renderChart(){		
+	getChartOptions(){
 		const options = {
 			rangeSelector: {				
 				enabled: false,
@@ -56,13 +63,13 @@ class TradeChart extends PureComponent{
 				selected:1
 			},
 			chart:{
-				type:"areaspline"
+				type:"spline"
 			},
 			navigator: {
 				enabled: false
 			},
 			title: {
-				text: false
+				text: "Stats for recent  15 Days"
 			},
 			scrollbar: {
 				enabled: false
@@ -72,11 +79,16 @@ class TradeChart extends PureComponent{
 			},
 			credits: {
 				enabled: false
-			},			
+			},	
+			legend:{
+				enabledd:true,
+				layout: 'vertical'
+			},
 			tooltip: {
 				formatter:function(){					
 					return (
-						`<strong>Buy | ${this.points[0].point.tradeDate}</strong>						
+						`<strong>Account # ${this.points[0].point.account}</strong>						
+						<br /><strong>Buy | ${this.points[0].point.tradeDate}</strong>						
 						<br /><strong>Ticker </strong> : ${this.points[0].point.ticker}
 						<br /><strong>Class </strong> : ${this.points[0].point.assetClass}
 						<br /><strong>Volume </strong> : ${this.y}
@@ -87,28 +99,34 @@ class TradeChart extends PureComponent{
 				name:"Buy",
 				data: this.getChartSeries('BUY'),
 				fillColor: {
-                linearGradient: {
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 1
-                },
-                stops: [
-                    [0, Highcharts.getOptions().colors[0]],
-                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                ]
-            }
+					linearGradient: {
+						x1: 0,
+						y1: 0,
+						x2: 0,
+						y2: 1
+					},
+					stops: [
+						[0, Highcharts.getOptions().colors[0]],
+						[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+					]
+				}
 			},
-			/*{
-				data: this.getChartSeries('SELL')
-			}*/]
+			{
+				name:"Sell",
+				data: this.getChartSeries('SELL')				
+			}]
 		};
 		
+		return options;
+		
+	}
+	
+	renderChart(){		
 		return (
 			<HighchartsReact
 				highcharts={Highcharts}
 				constructorType={'stockChart'}
-				options={options}
+				options={this.getChartOptions()}
 			/>
 		);
 		
@@ -123,7 +141,7 @@ class TradeChart extends PureComponent{
 					</h2>
 				</Col>
 				<Col lg="12">	
-					<div className="cardStyled">
+					<div className="cardStyled p-t-20 p-b-20">
 					{this.renderChart()}
 					</div>
 				</Col>

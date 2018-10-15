@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Col } from 'reactstrap';
 import './Statistics.scss';
 import MaterialIcon from 'material-icons-react';
@@ -9,9 +9,9 @@ Description : Top header statistics components to show stats of DOW, S&P and Nas
 Props : NA
 */
 
-class Statistics extends Component{
+const Statistics =(props)=>{
 	
-    renderDOWStats(){
+    const renderDOWStats=()=>{
         return (
             <div className="cardStyled">
                <div className="cardWrapper">
@@ -24,7 +24,7 @@ class Statistics extends Component{
         );
     }
 
-    renderNasdaqStats(){
+    const renderNasdaqStats=()=>{
         return (
             <div className="cardStyled">
                <div className="cardWrapper">
@@ -37,7 +37,7 @@ class Statistics extends Component{
         );
     }
 
-    renderSPStats(){
+    const renderSPStats=()=>{
         return (
             <div className="cardStyled">
                <div className="cardWrapper">
@@ -50,27 +50,25 @@ class Statistics extends Component{
         );
     }
     
-
-    render(){
-        return (
-            <Row className="statisticsWrapper m-t-40">
-				<Col lg="12">
-					<h2 className="title">
-						Quick statistics
-					</h2>
-				</Col>
-				<Col lg="4">					
-					{this.renderDOWStats()}
-				</Col>
-				<Col lg="4">	
-					{this.renderNasdaqStats()} 
-				</Col>
-				<Col lg="4">	
-					{this.renderSPStats()} 
-				</Col> 
-            </Row>
-        );
-    }
+   
+	return (
+		<Row className="statisticsWrapper m-t-40">
+			<Col lg="12">
+				<h2 className="title">
+					Quick Stats
+				</h2>
+			</Col>
+			<Col lg="4">					
+				{renderDOWStats()}
+			</Col>
+			<Col lg="4">	
+				{renderNasdaqStats()} 
+			</Col>
+			<Col lg="4">	
+				{renderSPStats()} 
+			</Col> 
+		</Row>
+	);    
 
 } 
 

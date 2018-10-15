@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Footer.scss';
+
+/*
+Component Name : Footer
+Description : Footer with copyright information
+Props : NA
+*/
 
 const Footer=()=>{
     return (
         <footer>
             <div className="copyrightWrapper">
-                <p className="text-center">&copy; 2018. dailydone.com | Daily works done easy.</p>
+                <p className="text-center">&copy; 2018. eighTrade.com | an optimized trading platform.</p>
             </div>
         </footer>
     );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Col } from 'reactstrap';
 import './Header.scss';
 import MaterialIcon from 'material-icons-react';
@@ -9,9 +9,9 @@ Description : Header component with collapsable navigation
 Props : NA
 */
 
-class Header extends Component{    
+const Header=(props)=>{    
 
-    renderLogo(){
+    const renderLogo=()=>{
         return (
             <div className="logoWrapper flex flex-align-item">
                 <a href="#">
@@ -24,7 +24,7 @@ class Header extends Component{
         );
     }
 
-    renderUserDetails(){
+    const renderUserDetails=()=>{
         return (
             <div className="userDetailsWrapper">
                 <ul className="flex flex-align-item float-right">
@@ -47,20 +47,20 @@ class Header extends Component{
         );
     }
 
-    render(){
-        return (
-            <header className="headerWrapper">
-				<Row>
-					<Col lg="6">
-						{this.renderLogo()}
-					</Col>
-					<Col lg="6">
-						{this.renderUserDetails()}
-					</Col>
-				</Row>
-            </header>
-        );
-    }
+   
+	return (
+		<header className="headerWrapper">
+			<Row>
+				<Col lg="6">
+					{renderLogo()}
+				</Col>
+				<Col lg="6">
+					{renderUserDetails()}
+				</Col>
+			</Row>
+		</header>
+	);
+    
 
 } 
 
