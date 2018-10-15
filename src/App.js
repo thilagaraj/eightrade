@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import DashboardPage from './Pages/DynamicPages';
@@ -16,30 +16,29 @@ Description : Main page component containing routing
 Props : NA
 */
 
-class App extends React.Component {
-  render() {
+const App =(props)=> {
+	
     return (
 		<Container fluid>
 			<Row>
 				<Col lg="12">
 					<Header/>
 				</Col>
-			</Row>
-			<Router>
+			</Row>	
+			<div>
 				<Switch>
 					<Route exact path="/" component={DashboardPage}/>
 					<Route path="/dashboard" component={DashboardPage}/>
 					<Route path="/about" component={AboutPage}/>
-				</Switch>
-			</Router>      
+				</Switch>	
+			</div>
 			<Row>
 				<Col lg="12">
 					<Footer/>  
 				</Col>
 			</Row>                    
 		</Container>
-    );
-  }
+    );  
 }
 
 export default App;

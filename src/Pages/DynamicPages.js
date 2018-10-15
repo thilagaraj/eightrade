@@ -5,7 +5,7 @@ import ActiveQuotes from '../Components/ActiveQuotes';
 import TradeChart from '../Components/TradeChart';
 import { Row, Col } from 'reactstrap';
 
-const Dashboard=(props)=>{
+const DashboardPage=(props)=>{
 	return (
 		<div>
 			<Row>
@@ -34,13 +34,4 @@ const Dashboard=(props)=>{
 	);	
 }
 
-const AccountsList=(props)=>{
-	return "";	
-}
-
-const AccountsEdit=(props)=>{
-	return "";	
-}
-
-
-export default {Dashboard, AccountsList, AccountsEdit};
+export default DashboardPage;

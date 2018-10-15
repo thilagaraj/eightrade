@@ -6,6 +6,7 @@ import HighchartsReact from 'highcharts-react-official'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Actions from '../../Store/Actions';
+import Errors from '../Errors';
 import './TradeChart.scss';
 
 /*
@@ -138,7 +139,8 @@ class TradeChart extends PureComponent{
 				<Col lg="12">
 					<h2 className="title">
 						Trade Statistics
-					</h2>
+					</h2>					
+					<Errors messages={this.props.errors}/>
 				</Col>
 				<Col lg="12">	
 					<div className="cardStyled p-t-20 p-b-20">

@@ -6,6 +6,7 @@ import MaterialIcon from 'material-icons-react';
 import Select from 'react-select';
 import Config from '../../Config';
 import Constants from '../../Constants';
+import Errors from '../Errors';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import './RecentTrades.scss';
 import '../../Styles/AGGridOverrides.scss';
@@ -298,6 +299,7 @@ class RecentTrades extends PureComponent{
                 <h2 className="title">
                     Recent Trades
                 </h2>
+				<Errors messages={this.props.errors}/>
 				<Row className="filterWrapper">
 					<Col lg="3">
 						{this.renderAssetClassFilter()}		

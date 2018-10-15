@@ -103,6 +103,10 @@ small{
 	color:$bodyFontColor;
 }
 
+.text-condensed{
+	line-height:27px;
+	margin-bottom:10px;
+}	 
 
 $spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); 
 $sides: (top, bottom, left, right);

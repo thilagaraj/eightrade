@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import APISerivce from './APIService';
+import Constants from '../Constants';
 
 export default {		
 	
@@ -15,7 +16,7 @@ export default {
 			APISerivce.get(`/trades?_sort=tradeDate&_order=asc`).then((response)=>{
 				resolve(response.data);		
 			}).catch((errorResponse)=>{
-				reject(errorResponse);	
+				reject([Constants.ERRORS["500"]]);	
 			});
 		});
 	},
@@ -54,7 +55,7 @@ export default {
 				}				
 				resolve(response);		
 			}).catch((errorResponse)=>{
-				reject(errorResponse);	
+				reject([Constants.ERRORS["500"]]);	
 			});
 		});
 	},
