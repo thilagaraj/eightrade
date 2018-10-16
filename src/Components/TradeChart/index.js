@@ -63,9 +63,6 @@ class TradeChart extends PureComponent{
 				inputEnableds:false,
 				selected:1
 			},
-			chart:{
-				type:"spline"
-			},
 			navigator: {
 				enabled: false
 			},
@@ -76,14 +73,21 @@ class TradeChart extends PureComponent{
 				enabled: false
 			},
 			yAxis:{
-				opposite:false
-			},
+				opposite:false,
+				min: 30
+			},			
 			credits: {
 				enabled: false
 			},	
-			legend:{
-				enabledd:true,
-				layout: 'vertical'
+			legend: {
+				enabled: true
+            },
+			plotOptions: {
+				spline: {
+					marker: {
+						enabled: true
+					}
+				}
 			},
 			tooltip: {
 				formatter:function(){					
@@ -98,22 +102,12 @@ class TradeChart extends PureComponent{
 			},
 			series: [{
 				name:"Buy",
-				data: this.getChartSeries('BUY'),
-				fillColor: {
-					linearGradient: {
-						x1: 0,
-						y1: 0,
-						x2: 0,
-						y2: 1
-					},
-					stops: [
-						[0, Highcharts.getOptions().colors[0]],
-						[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-					]
-				}
+				type: 'spline',
+				data: this.getChartSeries('BUY')				
 			},
 			{
 				name:"Sell",
+				type: 'spline',
 				data: this.getChartSeries('SELL')				
 			}]
 		};

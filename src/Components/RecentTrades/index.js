@@ -80,7 +80,7 @@ class RecentTrades extends PureComponent{
 		this.props.getTradesData(filters);
 		setTimeout(()=>{
 			this.setPagination();
-		},500);
+		},2000);
 	}
 	
 	formatNumber(params){
@@ -175,7 +175,7 @@ class RecentTrades extends PureComponent{
 		this.api.paginationSetPageSize(Config.GRID_ROWS_SIZE);
 		setTimeout(()=>{
 			this.setPagination();
-		},500);		
+		},2000);		
 	}
 	
 	onNext(){

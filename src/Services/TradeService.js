@@ -13,7 +13,7 @@ export default {
 	*/
 	getTradesForChart(limit,offset){
 		return new Promise((resolve,reject)=>{
-			APISerivce.get(`/trades?_sort=tradeDate&_order=asc`).then((response)=>{
+			APISerivce.get(`/trades?_sort=tradeDate,volume&_order=asc,asc`).then((response)=>{
 				resolve(response.data);		
 			}).catch((errorResponse)=>{
 				reject([Constants.ERRORS["500"]]);	
