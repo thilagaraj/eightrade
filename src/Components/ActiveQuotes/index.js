@@ -1,6 +1,5 @@
 import React from 'react';
 import './ActiveQuotes.scss';
-import MaterialIcon from 'material-icons-react';
 
 /*
 Component Name : ActiveQuotes
