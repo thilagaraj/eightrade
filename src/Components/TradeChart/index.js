@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
-import MaterialIcon from 'material-icons-react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 import { connect } from 'react-redux';
