@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import APISerivce from './APIService';
 import Constants from '../Constants';
 
