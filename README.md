@@ -3,7 +3,6 @@ Basic react and redux project. Simple trading dashboard with three major widgets
 ## Pre-requisites
 ```
 Install latest node
-npm install
 ```
 
 ## Start DB server
