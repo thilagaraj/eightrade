@@ -16,7 +16,7 @@ npm install
 npm start
 ```
 
-Thanks for the oppoortunity.
+Thanks for the opportunity.
 ~Thilagaraj
 
 
