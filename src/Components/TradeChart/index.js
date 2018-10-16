@@ -29,7 +29,7 @@ class TradeChart extends PureComponent{
 		let filtered=[],
 			expected=[],
 			d=new Date();
-		d.setDate(d.getDate()-this.props.noOfDays);console.log(d);
+		d.setDate(d.getDate()-this.props.noOfDays);
 		d=d.getTime();
 		if(actionType=='BUY' && this.props.chartVolumeList){
 			filtered=this.props.chartVolumeList.filter((o,k)=>

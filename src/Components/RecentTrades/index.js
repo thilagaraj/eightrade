@@ -198,7 +198,7 @@ class RecentTrades extends PureComponent{
 	}
 	
 	renderAssetClassFilter(){
-		const acOptions=[];console.log(Constants);
+		const acOptions=[];
 		for(let item in Constants.ASSET_CLASSES){ 
 			acOptions.push({
 				value:item,
