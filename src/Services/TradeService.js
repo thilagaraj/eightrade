@@ -28,8 +28,7 @@ export default {
 	*/
 	getAllTrades(filters){
 		let queryString=[],
-			datesFilter=[],
-			response=[];
+			datesFilter=[];
 		if(filters){			
 			filters.forEach((o)=>{
 				if(o.value && o.columnName!=="_TRADE_DATES_"){
