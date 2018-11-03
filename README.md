@@ -15,4 +15,6 @@ json-server --watch database\data.json
 npm install
 npm start
 ```
+## View 
+![Eightrade](https://raw.githubusercontent.com/thilagaraj/eightrade/blob/master/screenshot.png)
 
