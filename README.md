@@ -16,5 +16,5 @@ npm install
 npm start
 ```
 ## View 
-![Eightrade](https://raw.githubusercontent.com/thilagaraj/eightrade/blob/master/screenshot.png)
+![Eightrade](https://raw.githubusercontent.com/thilagaraj/eightrade/master/screenshot.png)
 
